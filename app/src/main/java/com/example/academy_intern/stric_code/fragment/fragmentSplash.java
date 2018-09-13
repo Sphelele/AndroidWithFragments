@@ -21,19 +21,8 @@ public class fragmentSplash extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-
-
-        return inflater.inflate(R.layout.slash, container, false);
+        return (view = inflater.inflate(R.layout.slash, container, false));
     }
 
-
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        ImageView zoom =  (ImageView) view.findViewById(R.id.imageView);
-        Animation zoomAnimation = AnimationUtils.loadAnimation( view.getContext(), R.anim.zoom);
-        zoom.startAnimation(zoomAnimation);
-
-    }
 
 }
