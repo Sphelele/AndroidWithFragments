@@ -7,14 +7,33 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
+import com.example.academy_intern.stric_code.MainActivity;
 import com.example.academy_intern.stric_code.R;
 
 public class fragmentSplash extends Fragment {
 
+    View view;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+
+
         return inflater.inflate(R.layout.slash, container, false);
     }
+
+
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        ImageView zoom =  (ImageView) view.findViewById(R.id.imageView);
+        Animation zoomAnimation = AnimationUtils.loadAnimation( view.getContext(), R.anim.zoom);
+        zoom.startAnimation(zoomAnimation);
+
+    }
+
 }
